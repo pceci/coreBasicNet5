@@ -1,0 +1,13 @@
+@model coreBasicNet5.Entities.cUsuario
+
+@using (Html.BeginForm("UsuarioEdit", "Admin", FormMethod.Post))
+{
+    @Html.Partial("_UsuarioDetails", Model)
+
+<div class="row">
+  <div class="col-md-8">
+    <button id="submit" name="submit" class="btn btn-primary" value="1">Grabar</button>
+    <a href="/Admin/UsuarioIndex/" id="cancel" class="btn btn-default">Volver</a>
+  </div>
+</div>  
+}

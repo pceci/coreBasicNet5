@@ -1,0 +1,7 @@
+.texto-vertical {
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
+}
+.oi-reglarol{
+font-size: 0.4em;
+}

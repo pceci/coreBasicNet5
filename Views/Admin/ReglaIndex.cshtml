@@ -1,0 +1,77 @@
+@{
+    ViewData["Title"] = "Admin";
+}
+@section Scripts{
+ <script src="~/js/admin/gestionreglas.js?n=6"></script>
+ }
+<h2>Regla</h2>     
+@{
+    string resultado = string.Empty;
+    string strListaChecks = ViewBag.ListaTodasReglasPorNivel;
+     if (strListaChecks != null)
+     {
+           resultado += "<input type=\"hidden\" id=\"hiddenListaTodasReglasPorNivel\" value=\"" + System.Net.WebUtility.HtmlEncode(strListaChecks) + "\" />";
+     }
+     WriteLiteral(resultado);
+}
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-6">
+            <div class="form-group">
+                <label id="lblRegla">Regla:</label>
+                <div id="divComboRegla">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-6">
+            <div class="form-group">
+                <label id="lblNombreRegla">Descripción:</label>
+                <input type="text" id="txtNombreReglaInput" class="form-control" maxlength="255" />
+            </div>
+        </div>
+        <div class="col-12 col-sm-6">
+            <div class="form-group">
+                <label id="lblPalabraClave" for="txtPalabraClaveInput">Clave:</label>
+                <input type="text" id="txtPalabraClaveInput" class="form-control" maxlength="50" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-sm-6">
+            <div class="form-group">
+                <label id="lblContenida">Contenida en:</label>
+                <div id='divCombo'>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h5><u>Acciones:</u></h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3 col-md-1"> <label id="lblActiva" for="CheckBoxSoportadasActiva">Activa</label></div>
+        <div class="col-3 col-md-1"> <label id="lblAgregar" for="CheckBoxSoportadasAgregar">Agregar</label></div>
+        <div class="col-3 col-md-1"> <label id="lblEditar" for="CheckBoxSoportadasEditar"> Editar</label></div>
+        <div class="col-3 col-md-1"><label id="lblEliminar" for="CheckBoxSoportadasEliminar">Eliminar</label></div>
+    </div>
+    <div class="row">
+        <div class="col-3 col-md-1"> <input type="checkbox" id="CheckBoxSoportadasActiva" disabled="disabled"
+                checked="checked" />
+        </div>
+        <div class="col-3 col-md-1"> <input type="checkbox" id="CheckBoxSoportadasAgregar" /></div>
+        <div class="col-3 col-md-1"> <input type="checkbox" id="CheckBoxSoportadasEditar" /></div>
+        <div class="col-3 col-md-1"> <input type="checkbox" id="CheckBoxSoportadasEliminar" /></div>
+    </div>
+    <div class="row justify-content-end">
+        <div class="col-2"> <button id="btnGuardar" class="btn btn-primary" onclick="return clikGuardar()">
+                Guardar</button>
+        </div>
+        <div class="col-2"></div><button id="btnEliminar" class="btn btn-danger" onclick="return clikEliminar()">
+            Eliminar</button>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+@model coreBasicNet5.Entities.cUsuario
+
+<h2>Usuario</h2>
+<h4>Detalle</h4>
+<hr />
+@Html.ValidationSummary("", new { @class = "text-danger" })
+@Html.HiddenFor(x => x.usu_codigo)
+@Html.HiddenFor(x => x.id)
+<div class="form-group">
+    @Html.LabelFor(m => m.usu_nombre, new { @class = "col-md-2 control-label" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(m => m.usu_nombre, new { @class = "form-control"})
+    </div>
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.usu_apellido, new { @class = "col-md-2 control-label" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(m => m.usu_apellido, new { @class = "form-control" })
+    </div>
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.usu_mail, new { @class = "col-md-2 control-label" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(m => m.usu_mail, new { @class = "form-control" })
+    </div>
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.usu_login, new { @class = "col-md-2 control-label" })
+    <div class="col-md-10">
+        @Html.TextBoxFor(m => m.usu_login, new { @class = "form-control" })
+    </div>
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.usu_codRol, new { @class = "col-md-2 control-label" })
+    <div class="col-md-10">
+        @Html.DropDownListFor(x => x.usu_codRol, new
+        Microsoft.AspNetCore.Mvc.Rendering.SelectList(ViewBag.comboRoles,"Value","Text",Model.rol_codRol), new { @class
+        = "form-control" })
+    </div>
+</div>
+<div class="form-group">
+    @Html.LabelFor(m => m.usu_observacion, new { @class = "col-md-2 control-label" })
+    <div class="col-md-10">
+        @Html.TextAreaFor(m => m.usu_observacion, new { @class = "form-control" })
+    </div>
+</div>

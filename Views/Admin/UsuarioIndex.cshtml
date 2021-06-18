@@ -1,0 +1,55 @@
+@model IEnumerable<coreBasicNet5.Entities.cUsuario>
+@{
+    ViewData["Title"] = "Admin";
+}
+
+<h2>Usuario</h2>
+@Html.ActionLink("Nuevo", "UsuarioCreate")
+<table class="table table-striped">
+    <thead >
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.usu_nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.usu_apellido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.usu_mail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rol_Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.usu_estadoToString)
+            </th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.usu_nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.usu_apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.usu_mail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rol_Nombre)
+            </td>     
+            <td>
+                @Html.DisplayFor(modelItem => item.usu_estadoToString)
+            </td>                       
+              <td>
+                  @Html.ActionLink("Editar", "UsuarioEdit", new { id=item.id }) 
+                  @Html.ActionLink("Detalle", "UsuarioDetails", new { id=item.id }) 
+                  @Html.ActionLink("Eliminar", "UsuarioDelete", new { id=item.id }) 
+              </td>
+        </tr>
+}
+    </tbody>
+</table>

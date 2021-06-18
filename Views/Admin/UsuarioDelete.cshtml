@@ -1,0 +1,14 @@
+@model coreBasicNet5.Entities.cUsuario
+
+@using (Html.BeginForm("UsuarioDeleteConfirmed", "Admin", FormMethod.Post))
+{
+    @Html.Partial("_UsuarioDetails", Model)
+  <h5>¿Desea eliminar?</h5>
+<div class="row">
+  <div class="col-md-8">
+    <button id="submit" name="submit" class="btn btn-primary" value="1">Si</button>
+    <a href="/Admin/UsuarioIndex/" id="cancel" class="btn btn-default">No</a>
+</div>
+</div>
+
+}
